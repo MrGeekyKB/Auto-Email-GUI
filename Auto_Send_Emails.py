@@ -7,7 +7,7 @@ ROOT = tk.Tk()
 ROOT.withdraw()
 # the input dialog
 USER_INP_Email = simpledialog.askstring(title="Emails",
-                                  prompt="Enter Emails Seprated by ' , ':")
+                                  prompt="Enter Emails Seprated by ' , ' :")
 
 
 gmail_user = 'kbiotics@gmail.com'
@@ -16,8 +16,13 @@ reciver=USER_INP_Email
 new_reciver= reciver.split(',')
 sent_from = gmail_user
 to = new_reciver
-subject = 'Welcome to Python Email'
-body = 'Hello We are Working Together using GUI Single mail also works & Multiple Emails'
+USER_INP_Subject = simpledialog.askstring(title="Write a Subject",
+                                  prompt="Subject :")
+subject = USER_INP_Subject
+
+USER_INP_Body = simpledialog.askstring(title="Body of Email",
+                                  prompt="Message :")
+body = USER_INP_Body
 
 email_text = """\
 From: %s
